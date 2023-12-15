@@ -11,7 +11,8 @@ There are six tutorials:
 4. 04_gene_set_enrichment_analysis: gene set enrichment analysis (GSEA) on the DE gene sets
 5. 05_ensemble_gene_set_enrichment_analysis: ensemble GSEA of the DE gene sets and comparison to GSEA
 6. 06_differential_transcript_usage: the differential transcript usage analysis of the same dataset
-7. 07_non_model_exploratory_data_analysis: the exploratory data analysis of a Norway spruce RNA-Seq dataset
+7. 07_non_model_organism_exploratory_data_analysis: the exploratory data analysis of a Norway spruce RNA-Seq dataset
+8. 08_non_model_organism_differential_gene_expression: the differential expression DE analysis of the Norway spruce RNA-Seq dataset
 
 To start a tutorial run _e.g._:
 ```{r tutorial}
