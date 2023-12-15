@@ -315,7 +315,7 @@ head(results(dds))
 
 ```
 
-Note the second genes has only missing values (it was never expressed), while the sixth one has a missing `padj`. This is the telltale sign that this gene has been deemed uninformative.
+Note the second gene has only missing values (it was never expressed), while the sixth one has a missing `padj`. This is the telltale sign that this gene has been deemed uninformative.
 
 We will revisit these results, but prior to that we need to learn about modelling in R, as the results we just observed were tests conducted on the model $expression = f(time * treatment)$.
 
