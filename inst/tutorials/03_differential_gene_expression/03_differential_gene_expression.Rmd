@@ -112,7 +112,7 @@ dds
 dds <- DESeq(dds)
 ```
 
-And that's it! In a single command, we have run the DGE! In a way, `DESeq()` is a black box. This is in my opinion, the biggest difference with the other, equally well performing, DE package `edgeR` (see [Schurch _et al._, RNA, 2016](https://doi.org/10.1261%2Frna.053959.115) for a comparison of DE tools). `DESeq2` hides the complexity away from the end-user, making automated educated decision based on the properties of the data, while `edgeR` leave all decisions to the end-user who needs to combine the different steps of the DE analysis on its own. Nonetheless, the `DESeq()` steps can be decomposed as we have seen last week with _e.g._ the `estimateSizeFactors()` step we ran, but `edgeR` remains the most versatile of the two (_caveat:_ provided you know what you are doing).
+And that's it! In a single command, we have run the DGE! In a way, `DESeq()` is a black box. This is in my opinion, the biggest difference with the other, equally well performing, DE package `edgeR` (see [Schurch _et al._, RNA, 2016](https://doi.org/10.1261%2Frna.053959.115) for a comparison of DE tools). `DESeq2` hides the complexity away from the end-user, making automated educated decision based on the properties of the data, while `edgeR` leave all decisions to the end-user who needs to combine the different steps of the DE analysis on its own. Nonetheless, the `DESeq()` steps can be decomposed as we have seen in the previous tutorial with _e.g._ the `estimateSizeFactors()` step we ran, but `edgeR` remains the most versatile of the two (_caveat:_ provided you know what you are doing).
 
 Last but not least, `DESeq()` is unlike a true black box, exposing all the steps it performs
 
