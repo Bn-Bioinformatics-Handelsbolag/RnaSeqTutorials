@@ -577,7 +577,7 @@ Before looking into the results (yes, we will eventually!), let us figure out wh
 
 ### Contrast, model matrix, etc.
 
-To look into the semantic of DE testing, and understand its meaning (which is non trivial), there is a nice application developed by Charlotte Soneson _et al._, in an `R` package called [ExploreModelMatrix](https://bioconductor.org/packages/release/bioc/html/ExploreModelMatrix.html). The package can be deployed as a `shiny` app or run standalone. I have done the former [there](http://terra.upsc.se/ExploreModelMatrix/).
+To look into the semantic of DE testing, and understand its meaning (which is non trivial), there is a nice application developed by Charlotte Soneson _et al._, in an `R` package called [ExploreModelMatrix](https://bioconductor.org/packages/release/bioc/html/ExploreModelMatrix.html). 
 
 #### ExploreModelMatrix
 
@@ -590,7 +590,7 @@ Then in the `Design formula` text box enter the following formulas and look at t
 3. `~time + treatment`
 4. `~time * treatment`
 
-Below are some example plots, showing the different contributions of the variables (as arrows) for the different contrasts. The plots represent the expression values of a single gene (as black dots) in different samples, separated by sample groups. These are meant as a visual help to what is reported in the `ExploreModelMatrix` [app](http://terra.upsc.se/ExploreModelMatrix/). Note the image are from a different studies where the variables are treatment and genotype.
+Below are some example plots, showing the different contributions of the variables (as arrows) for the different contrasts. The plots represent the expression values of a single gene (as black dots) in different samples, separated by sample groups. These are meant as a visual help to what is reported in the `ExploreModelMatrix` app. Note the image are from a different studies where the variables are treatment and genotype.
 
 ---
 ~$0 + treatment$
@@ -783,7 +783,7 @@ sum(!is.na(res$padj) & res$padj <= 0.01 & abs(res$log2FoldChange) >= 0.5)
 
 #### Other contrasts
 
-What if we are interested in comparing treatment and control at T04 (the reference being control at T03)? What about the time effect specifically in the induced samples (the reference being in between the mock samples)? None of the existing contrasts can give us that information. Here, we will need to use the `contrast=` argument of the `results()` function and that is where the previous section will become handy, as well as Charlotte's `ExploreModelMatrix` - [link to the app](http://terra.upsc.se/ExploreModelMatrix).
+What if we are interested in comparing treatment and control at T04 (the reference being control at T03)? What about the time effect specifically in the induced samples (the reference being in between the mock samples)? None of the existing contrasts can give us that information. Here, we will need to use the `contrast=` argument of the `results()` function and that is where the previous section will become handy, as well as Charlotte's `ExploreModelMatrix`.
 
 `contrast=` can take three possible type of arguments (from the `?results()` help page):
 
@@ -853,7 +853,7 @@ Heatmap(t(scale(t(vst[row_sel,col_sel]))),
     treatment=dds$treatment[col_sel])
 ```
 
-A point of caution. Some low (or very low) expressed genes can be called differentially expressed. Hence it is good pratice to plot the distribution of the average counts of the DE genes. Use the code block below to take a look (suggestion: `ggplot()`, `geom_boxplot()`, as well as `scale_y_log10()` as the counts are linear...)
+A point of caution. Some low (or very low) expressed genes can be called differentially expressed. Hence it is good practice to plot the distribution of the average counts of the DE genes. Use the code block below to take a look (suggestion: `ggplot()`, `geom_boxplot()`, as well as `scale_y_log10()` as the counts are linear...)
 
 ```{r DE-counts, exercise=TRUE, exercise.eval=TRUE, exercise.setup="G03_vs_G02_at_T04"}
 row_sel <- !is.na(G03_vs_G02_at_T04$padj) & 
